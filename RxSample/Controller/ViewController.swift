@@ -24,6 +24,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        button.isEnabled = false
+        button.setTitle("おせない", for: .disabled)
+        button.setTitle("いける", for: .normal)
         
     }
     
