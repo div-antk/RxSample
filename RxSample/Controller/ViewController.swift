@@ -11,22 +11,25 @@ import RxCocoa
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var label: UILabel!
     @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var textField2: UITextField!
+    
+    @IBOutlet weak var errorLabel1: UILabel!
+    @IBOutlet weak var errorLabel2: UILabel!
+    
+    @IBOutlet weak var button: UIButton!
     
     let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // textFieldに入力するとLabelに反映される
-        textField.rx.text.orEmpty
-            .bind(to: label.rx.text)
-            .disposed(by: disposeBag)
+        
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
+    
+//    override func didReceiveMemoryWarning() {
+//        super.didReceiveMemoryWarning()
+//    }
+    
+    
 }
-
