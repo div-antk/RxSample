@@ -13,26 +13,35 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var textField2: UITextField!
+    @IBOutlet weak var textField3: UITextField!
     
     @IBOutlet weak var errorLabel1: UILabel!
     @IBOutlet weak var errorLabel2: UILabel!
+    @IBOutlet weak var errorLabel3: UILabel!
     
+    @IBOutlet weak var countLabel: UILabel!
     @IBOutlet weak var button: UIButton!
     
-    let disposeBag = DisposeBag()
+    private var count = 0
+    
+    private var disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        button.isEnabled = false
-        button.setTitle("おせない", for: .disabled)
-        button.setTitle("いける", for: .normal)
         
+        button.rx.tap
+            .subscribe(onNext: {(next) in
+//                self.count += 1
+//                self.countLabel.text = String(self.count)
+//                        print("あああああ")
+                        self.set()
+                    })
+                .disposed(by: disposeBag)
     }
     
-//    override func didReceiveMemoryWarning() {
-//        super.didReceiveMemoryWarning()
-//    }
-    
+    func set() {
+        print("あああああ")
+    }
     
 }
